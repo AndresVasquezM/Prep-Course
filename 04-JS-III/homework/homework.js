@@ -1,5 +1,7 @@
 // No cambies los nombres de las funciones.
 
+const { stringify } = require("git-url-parse");
+
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
@@ -157,7 +159,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  
+  var nts = n.toString();
+  if(nts[0] === '9'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -174,6 +181,19 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  let  mda = array.filter(function (val){
+    if (val === 'Enero' || val === 'Marzo' || val === 'Noviembre'){
+      return true;
+    } else {
+      return false;
+    }
+  });
+  if (mda.length < 3){
+    return "No se encontraron los meses pedidos"
+  } else {
+    return mda;
+  }
+  
 }
 
 
@@ -181,6 +201,13 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  let  mac = array.filter(function (val){
+    return val > 100
+  });
+
+   return mac;
+
+  
 }
 
 

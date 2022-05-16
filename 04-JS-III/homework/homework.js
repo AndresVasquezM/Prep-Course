@@ -172,6 +172,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
+      for (var i = 0 ; i < arreglo.length - 1; i++){
+    if (arreglo[0] !== arreglo[i]) {
+      return false;
+  }
+}
+  return true;
   
 } 
 
@@ -206,8 +212,6 @@ function mayorACien(array) {
   });
 
    return mac;
-
-  
 }
 
 
@@ -219,6 +223,22 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var nuevoValor = [];
+  var suma = numero;
+  for (i = 0 ; i < 10; i++){
+      suma = (suma + 2);
+       if (suma === i){
+                break;
+       }
+        else {
+        nuevoValor.push(suma);
+        }
+  }
+  if (i < 10){
+    return "Se interrumpió la ejecución";
+  } else {
+    return nuevoValor;
+  }
 }
 
 
@@ -229,6 +249,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+var nuevoValor = [];
+var suma = numero;
+for (i = 0 ; i < 10 ; i++){
+ if (i === 5) {
+   continue
+ } else {
+  suma = (suma + 2)
+  nuevoValor.push(suma);
+ }
+}
+return nuevoValor;
 }
 
 

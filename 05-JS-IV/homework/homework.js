@@ -128,10 +128,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
- for (let esPremium in usuarios.usuario){
-    esPremium = true;
-  }
-  return usuarios;
+ for (var i = 0 ; i < usuarios.length ; i++) {
+  usuarios[i].esPremium = true;
+ }
+ return usuarios;
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -142,8 +142,8 @@ function sumarLikesDeUsuario (usuario) {
   // Devuelve la suma
   // Tu código:
   var sumaLikes = 0;
-  for (let posts in usuario){
-    sumaLikes = sumaLikes + posts.post[likes];
+  for (i = 0 ; i < usuario['posts'].length ; i++){
+    sumaLikes = sumaLikes + usuario.posts[i].likes;
   }
   return sumaLikes;
 }
